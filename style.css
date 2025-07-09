@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background: #030143;
+}
+
+.tabs {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.tab {
+    color: #fff;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.tab:hover, .tab.active {
+    background: #007acc;
+}
+
+.tab-content {
+    display: none;
+    background: #fff;
+    padding: 30px;
+    margin: 0 20px 20px 20px;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 2px 6px #ccc;
+}
+
+.tab-content.active {
+    display: block;
+}
+.highlight {
+    color: #d80027;
+    font-weight: bold;
+    background: #ffeaea;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #022f4d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+.button:hover {
+    background: #a30021;
+}
+h1{
+  color:rgb(237, 107, 211) ;  
+}
+h2{
+    color: #c21205;
+    margin-top: 0;
+}
+h3{
+    color: #07ed0e;
+    margin-top: 0;
+}
+h4{
+
+}
+
+.center-images {
+    display: flex;
+    margin-top: auto;
+    justify-content: center;   /* wyśrodkowanie w poziomie */
+     align-items: auto;      /* wyśrodkowanie w pionie (jeśli div ma wysokość) */
+    gap: 20px;                 /* odstęp między obrazkami, opcjonalnie */
+    height: 200px;             /* opcjonalnie, jeśli chcesz wyśrodkować także w pionie */
+}
+a:focus-visible,
+li:focus-visible {
+    outline: 2px dashed red;
+    outline-offset: 2px;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;      /* Pozwala na zawijanie na mniejszych ekranach */
+    gap: 20px;
+    align-items: center;
+}
+
+.left, .right {
+    flex: 1 1 300px;      /* Elastyczne szerokości, min. 300px */
+}
+
+.left img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.right p {
+    margin: 0;
+    font-size: 1.1em;
+}
+.center-table {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px; /* opcjonalnie, odstęp od góry */
+}

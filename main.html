@@ -1,0 +1,252 @@
+!<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Nauka HTML i CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul class="tabs">
+            <li class="tab active" onclick="showTab('html')">HTML</li>
+            <li class="tab" onclick="showTab('css')">CSS</li>
+            <li class="tab" onclick="showTab('przyklad')">Przykład</li>
+        </ul>
+    </nav>
+    <section id="html" class="tab-content active">
+        <h1>Najważniejsze znaczniki HTML</h1>
+        <ul>
+            <li><code>&lt;h1&gt;...&lt;/h1&gt;</code> – nagłówek</li>
+            <li><code>&lt;p&gt;...&lt;/p&gt;</code> – akapit</li>
+            <li><code>&lt;a href=""&gt;...&lt;/a&gt;</code> – link</li>
+            <li><code>&lt;ul&gt;&lt;li&gt;...&lt;/li&gt;&lt;/ul&gt;</code> – lista nieuporządkowana</li>
+            <li><code>&lt;img src="" alt=""&gt;</code> – obrazek</li>
+            <li><code>&lt;div&gt;...&lt;/div&gt;</code> – sekcja/blok</li>
+            <li><code>&lt;span&gt;...&lt;/span&gt;</code> – fragment tekstu</li>
+        </ul>
+    </section>
+    <section id="css" class="tab-content">
+        <h1>Podstawowe klasy CSS</h1>
+        <ul>
+            <li><code>.active</code> – wyróżnienie aktywnego elementu</li>
+            <li><code>.tabs</code> – stylizacja paska zakładek</li>
+            <li><code>.tab-content</code> – stylizacja treści zakładki</li>
+            <li><code>.highlight</code> – przykładowa klasa do podkreślenia tekstu</li>
+        </ul>
+    </section>
+
+    <section id="przyklad" class="tab-content">
+        <h1>Przykład użycia klas CSS</h1>
+        <p>To jest <span class="highlight">wyróżniony tekst</span> dzięki klasie <code>highlight</code>.</p>
+    </section>
+<h2> Zadanie nagłówki</h2>
+
+<section>
+<h1> Nagłówek H1.     (pametaj tylko jeden na stronie)</h1>
+<h2 style="color: initial;">Nagłówek 2 rzędu</h2>
+<h3 style="color: initial;">Nagłówek 3 rzędu</h3>
+<h4> Nagłówek 4 rzedu </h4>
+<h5> Nagłówek 5 rzędu </h5>
+<h6> Nagłówek 6 rzędu </h6>
+</section>
+
+<span>
+    <p> Nagłówki które widzisz sa stylizowane automatycznie. Jesli chcesz je stylozowac musisz wejść do pliku CSS i dokonać zmany w stylu. Poprzez utworzenie odpowiedniej kalsy. Przykład stylizacji masz na poniższym zdjęciu.</p>
+</span>
+
+<div>
+    <div class="center-images">
+        <img src="h2n.jpg" alt="">
+    </div>
+    <h2> Zadanie 1 </h2>
+    <p> Znajdz w kodzie pliku CSS nagówki H1 i H4 (jak na zdjęciu) nadaj mi jakiś styl. Pamietaj, że zmiana wielkości czcionki spowoduje tez zmiany</p>
+    <div class="center-images">
+        <img src="zn1.jpg" alt="Widok na puste elementy stylu nagłówka w CSS">
+    </div>
+</div>
+     
+<h2> Zadanie tekst zwykły</h2>
+   
+<p> To jest zykły tekst nie jest on wklejony w DIV więc ile bym nie napisał będzie sie ciągnął od prawej do lewej aż dojdzie do końca strony po lewje stronie.Ponieważ strona jest responsywna bezie sie on zawijał jak napotka ograniczenie wyświetlania</p>
+    <h2> Zadanie przyciski w postaci buttona i linku z klasą</h2>
+    <section>
+         <button onclick="window.location.href='https://www.google.com';">
+    Przejdź do Google jako przycisk
+        </button>
+        <a href="https://www.google.com" class="button">Przejdź do Google jako link</a>
+    </section>
+<br>
+</b>
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(function(sec) {
+                sec.classList.remove('active');
+            });
+            document.getElementById(tabId).classList.add('active');
+            document.querySelectorAll('.tab').forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+            let tabs = document.querySelectorAll('.tab');
+            if(tabId === 'html') tabs[0].classList.add('active');
+            if(tabId === 'css') tabs[1].classList.add('active');
+            if(tabId === 'przyklad') tabs[2].classList.add('active');
+        }
+    </script>
+        <div class="container">
+            <div class="left">
+                <img src="https://www.w3schools.com/html/img_chania.jpg" alt="Zdjęcie" />
+                </div>
+                    <div class="right">
+                    <p>To jest tekst po prawej stronie zdjęcia. Ten układ jest responsywny i dostosowuje się do szerokości ekranu.</p>
+            </div>
+        </div>
+        <br></br>
+   <h2>Typy selektorów klas w CSS</h2>
+
+   <table class="center-table" border="1" cellpadding="8" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Typ selektora</th>
+      <th>Przykład</th>
+      <th>Co wybiera?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Uniwersalny</td>
+      <td><code>*</code></td>
+      <td>Wszystkie elementy na stronie</td>
+    </tr>
+    <tr>
+      <td>Elementu (typu)</td>
+      <td><code>p</code></td>
+      <td>Wszystkie paragrafy &lt;p&gt;</td>
+    </tr>
+    <tr>
+      <td>Klasy</td>
+      <td><code>.intro</code></td>
+      <td>Wszystkie elementy z klasą <code>intro</code></td>
+    </tr>
+    <tr>
+      <td>Identyfikatora</td>
+      <td><code>#header</code></td>
+      <td>Element o id <code>header</code></td>
+    </tr>
+    <tr>
+      <td>Atrybutu</td>
+      <td><code>[title]</code></td>
+      <td>Elementy z atrybutem <code>title</code></td>
+    </tr>
+    <tr>
+      <td>Pseudoklasy</td>
+      <td><code>a:hover</code></td>
+      <td>Linki &lt;a&gt;, nad którymi jest kursor myszy</td>
+    </tr>
+    <tr>
+      <td>Potomka</td>
+      <td><code>div p</code></td>
+      <td>Wszystkie &lt;p&gt; wewnątrz &lt;div&gt;</td>
+    </tr>
+    <tr>
+      <td>Dziecka</td>
+      <td><code>ul &gt; li</code></td>
+      <td>Bezpośrednie dzieci &lt;li&gt; w &lt;ul&gt;</td>
+    </tr>
+    <tr>
+      <td>Grupy</td>
+      <td><code>h1, h2, h3</code></td>
+      <td>Wszystkie nagłówki &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;</td>
+    </tr>
+  </tbody>
+</table>
+
+<br></br>
+<h2> Przykłady selektorów z opisem.</h2>
+<section>
+ <div class="container">
+            <div class="left">
+                <img src="pcss1.jpg" alt="Przykłady zastosowania selektorów" />
+                </div>
+                    <div class="right">
+                    <p>Przykłady zastosowania selektorów w CSS. Po lewej stronie widzicie kod który można zastosować a obok kodu jest jego nazwa.</p>
+            </div>
+        </div>
+        <br></br>
+</section>
+<section>
+     <h2>Najważniejsze znaczniki HTML</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Znacznik</th>
+                <th>Znaczenie działania</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><code>&lt;!DOCTYPE&gt;</code></td><td>Deklaruje typ dokumentu HTML.</td></tr>
+            <tr><td><code>&lt;!-- ... --&gt;</code></td><td>Komentarz w kodzie.</td></tr>
+            <tr><td><code>&lt;html&gt;</code></td><td>Główny kontener całego dokumentu HTML.</td></tr>
+            <tr><td><code>&lt;head&gt;</code></td><td>Sekcja z metadanymi.</td></tr>
+            <tr><td><code>&lt;title&gt;</code></td><td>Tytuł strony na karcie przeglądarki.</td></tr>
+            <tr><td><code>&lt;meta&gt;</code></td><td>Metadane strony.</td></tr>
+            <tr><td><code>&lt;link&gt;</code></td><td>Łączenie z zewnętrznymi zasobami.</td></tr>
+            <tr><td><code>&lt;style&gt;</code></td><td>Osadzenie stylów CSS.</td></tr>
+            <tr><td><code>&lt;script&gt;</code></td><td>Osadzenie lub podłączenie skryptów JS.</td></tr>
+            <tr><td><code>&lt;body&gt;</code></td><td>Widoczna zawartość strony.</td></tr>
+            <tr><td><code>&lt;h1&gt;-&lt;h6&gt;</code></td><td>Nagłówki o różnej ważności.</td></tr>
+            <tr><td><code>&lt;p&gt;</code></td><td>Akapit tekstu.</td></tr>
+            <tr><td><code>&lt;br&gt;</code></td><td>Przerwa w linii.</td></tr>
+            <tr><td><code>&lt;hr&gt;</code></td><td>Pozioma linia oddzielająca treści.</td></tr>
+            <tr><td><code>&lt;a&gt;</code></td><td>Hiperłącze (link).</td></tr>
+            <tr><td><code>&lt;img&gt;</code></td><td>Wstawianie obrazu.</td></tr>
+            <tr><td><code>&lt;ul&gt;</code></td><td>Lista nieuporządkowana.</td></tr>
+            <tr><td><code>&lt;ol&gt;</code></td><td>Lista uporządkowana.</td></tr>
+            <tr><td><code>&lt;li&gt;</code></td><td>Element listy.</td></tr>
+            <tr><td><code>&lt;div&gt;</code></td><td>Ogólny kontener blokowy.</td></tr>
+            <tr><td><code>&lt;span&gt;</code></td><td>Ogólny kontener liniowy.</td></tr>
+            <tr><td><code>&lt;strong&gt;</code></td><td>Ważny tekst (pogrubiony).</td></tr>
+            <tr><td><code>&lt;em&gt;</code></td><td>Akcentowany tekst (kursywa).</td></tr>
+            <tr><td><code>&lt;b&gt;</code></td><td>Pogrubienie tekstu.</td></tr>
+            <tr><td><code>&lt;i&gt;</code></td><td>Kursywa tekstu.</td></tr>
+            <tr><td><code>&lt;table&gt;</code></td><td>Tabela danych.</td></tr>
+            <tr><td><code>&lt;tr&gt;</code></td><td>Wiersz tabeli.</td></tr>
+            <tr><td><code>&lt;th&gt;</code></td><td>Nagłówek kolumny tabeli.</td></tr>
+            <tr><td><code>&lt;td&gt;</code></td><td>Komórka tabeli.</td></tr>
+            <tr><td><code>&lt;form&gt;</code></td><td>Formularz do przesyłania danych.</td></tr>
+            <tr><td><code>&lt;input&gt;</code></td><td>Pole formularza.</td></tr>
+            <tr><td><code>&lt;textarea&gt;</code></td><td>Wielowierszowe pole tekstowe.</td></tr>
+            <tr><td><code>&lt;button&gt;</code></td><td>Przycisk interaktywny.</td></tr>
+            <tr><td><code>&lt;select&gt;</code></td><td>Lista rozwijana.</td></tr>
+            <tr><td><code>&lt;option&gt;</code></td><td>Opcja w liście rozwijanej.</td></tr>
+            <tr><td><code>&lt;label&gt;</code></td><td>Etykieta dla elementu formularza.</td></tr>
+            <tr><td><code>&lt;header&gt;</code></td><td>Sekcja nagłówka strony lub sekcji.</td></tr>
+            <tr><td><code>&lt;footer&gt;</code></td><td>Sekcja stopki strony lub sekcji.</td></tr>
+            <tr><td><code>&lt;main&gt;</code></td><td>Główna treść dokumentu.</td></tr>
+            <tr><td><code>&lt;section&gt;</code></td><td>Sekcja tematyczna.</td></tr>
+            <tr><td><code>&lt;article&gt;</code></td><td>Samodzielny artykuł lub wpis.</td></tr>
+            <tr><td><code>&lt;aside&gt;</code></td><td>Treść poboczna, np. panel boczny.</td></tr>
+            <tr><td><code>&lt;nav&gt;</code></td><td>Nawigacja strony.</td></tr>
+            <tr><td><code>&lt;figure&gt;</code></td><td>Ilustracja z podpisem.</td></tr>
+            <tr><td><code>&lt;figcaption&gt;</code></td><td>Podpis do ilustracji.</td></tr>
+            <tr><td><code>&lt;audio&gt;</code></td><td>Osadzenie pliku dźwiękowego.</td></tr>
+            <tr><td><code>&lt;video&gt;</code></td><td>Osadzenie pliku wideo.</td></tr>
+            <tr><td><code>&lt;source&gt;</code></td><td>Źródło multimediów.</td></tr>
+            <tr><td><code>&lt;canvas&gt;</code></td><td>Obszar do rysowania grafiki.</td></tr>
+            <tr><td><code>&lt;details&gt;</code></td><td>Rozwijany/zwijany szczegół.</td></tr>
+            <tr><td><code>&lt;summary&gt;</code></td><td>Podsumowanie dla <code>&lt;details&gt;</code>.</td></tr>
+            <tr><td><code>&lt;mark&gt;</code></td><td>Wyróżnienie tekstu.</td></tr>
+            <tr><td><code>&lt;time&gt;</code></td><td>Oznaczenie czasu lub daty.</td></tr>
+            <tr><td><code>&lt;code&gt;</code></td><td>Fragment kodu komputerowego.</td></tr>
+            <tr><td><code>&lt;pre&gt;</code></td><td>Preformatowany tekst.</td></tr>
+            <tr><td><code>&lt;blockquote&gt;</code></td><td>Cytat blokowy.</td></tr>
+            <tr><td><code>&lt;cite&gt;</code></td><td>Źródło cytatu lub tytuł dzieła.</td></tr>
+            <tr><td><code>&lt;small&gt;</code></td><td>Mniejszy tekst.</td></tr>
+            <tr><td><code>&lt;sup&gt;</code></td><td>Indeks górny.</td></tr>
+            <tr><td><code>&lt;sub&gt;</code></td><td>Indeks dolny.</td></tr>
+            <tr><td><code>&lt;del&gt;</code></td><td>Usunięty tekst.</td></tr>
+            <tr><td><code>&lt;ins&gt;</code></td><td>Wstawiony tekst.</td></tr>
+        </tbody>
+    </table>
+</section>
+</body>
+</html>
